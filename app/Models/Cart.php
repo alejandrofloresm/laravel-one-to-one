@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Order extends Model
+class Cart extends Model
 {
     /**
      * The attributes that are mass assignable.
@@ -12,10 +12,10 @@ class Order extends Model
      * @var array
      */
     protected $fillable = [
-        'name', 'amount'
+        'name', 'order_id'
     ];
 
-    public function cart() {
-        return $this->hasOne('App\Models\Cart');
+    public function order() {
+        return $this->belongsTo('App\Models\Order');
     }
 }

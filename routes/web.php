@@ -25,3 +25,9 @@ Route::get('orders/create', 'OrdersController@create')->name('orders.create');
 
 // Almacenamiento de la orden
 Route::post('orders', 'OrdersController@store')->name('orders.store');
+
+// Índice de carritos
+Route::get('carts', 'CartsController@index')->name('carts.index');
+
+// Creación de carritos
+Route::get('orders/{order}/create-cart', 'OrdersController@createCart')->name('orders.carts.create');
